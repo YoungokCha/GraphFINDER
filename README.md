@@ -19,20 +19,6 @@ Graph-FINDER is a multimodal AI framework links literature mining with machine l
 
 The process begins with acquiring original images from literature sources (a). Visual feature detection is then used to identify regions likely containing closed rectangles (b). The main plotting areas, typically defined by rectangular regions exceeding a specific area threshold and including the primary axes, are localized and extracted to focus on the core measurement content (c). Subplots and auxiliary axes are removed to reduce visual clutter, ensuring only the relevant data region is retained (d). Finally, textual elements such as legends, labels, and annotations are detected to preserve essential contextual information needed for accurate interpretation of the extracted data (e).
 
-```python
-for contour in contours:
-    approx = cv2.approxPolyDP(contour, threshold_constant * cv2.arcLength(contour, True), True)
-    if len(approx) > 2:
-        area = cv2.contourArea(contour)
-        if area > (image_area / max_main_counter):
-            if not any(is_duplicate(approx, existing) for existing in main_rectangles) and not any(is_inside(approx, existing) for existing in main_rectangles):
-                main_rectangles.append(approx)
-                x, y, w, h = cv2.boundingRect(approx)
-                cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 10)
-            else:
-                detected_rectangles.append(approx)
-
-main_counter = len(main_rectangles)
 
 
 
