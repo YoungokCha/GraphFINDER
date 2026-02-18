@@ -1,0 +1,52 @@
+
+SYSTEM  = Mo1V63O128 (M1) r2SCAN+U static SCF + DOS (spin-polarized)
+
+ISTART = 0
+ICHARG = 2
+
+
+# Precision / meta-GGA
+PREC    = Accurate
+ENCUT   = 520
+METAGGA = R2SCAN
+ALGO    = All
+LASPH   = .TRUE.
+LMIXTAU = .TRUE.
+ADDGRID = .TRUE.
+
+# Symmetry (allow localization / broken symmetry)
+ISYM    = 0
+LREAL   = .FALSE.
+
+# Static SCF (no ionic steps)
+IBRION  = -1
+NSW     = 0
+ISIF    = 2
+
+# Spin
+ISPIN   = 2
+MAGMOM  = 1*1.0 63*1.0 128*0.0
+# Strongly recommended for your case (odd NELECT -> one unpaired electron):
+NUPDOWN = 1
+
+# DFT+U (apply U on V only; POSCAR order: Mo V O)
+LDAU     = .TRUE.
+LDAUTYPE = 2
+LDAUL    = 2  2  -1
+LDAUU    = 0  3.5  0
+LDAUJ    = 0  0.0  0
+LMAXMIX  = 4
+
+# SCF
+EDIFF   = 1E-7
+NELM    = 400
+NELMIN  = 5
+NELMDL  = -8
+
+# Smearing (good for gap detection)
+ISMEAR  = -5
+SIGMA   = 0.05
+
+# DOS / projections
+LORBIT  = 11
+NEDOS   = 2000

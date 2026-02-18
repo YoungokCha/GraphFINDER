@@ -1,0 +1,18 @@
+# ---- VASP INCAR (RELAX) : template ----
+SYSTEM  = VO2_relax
+ENCUT   = 520
+EDIFF   = 1E-5
+EDIFFG  = -0.02
+IBRION  = 2
+ISIF    = 3
+NSW     = 200
+ISMEAR  = 0
+SIGMA   = 0.05
+LREAL   = Auto
+PREC    = Accurate
+LWAVE   = .FALSE.
+LCHARG  = .FALSE.
+
+# Spin / magnetism (edit if needed)
+ISPIN   = 2
+MAGMOM  = 0 0 0
