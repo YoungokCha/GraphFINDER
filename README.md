@@ -38,7 +38,7 @@ main_counter = len(main_rectangles)
 
 2. save_data_point_into_file.py: Reconstruction of numerical data from the graphs
 <p align="center">
- <img width="600" height="800" alt="figure5_new" src="https://github.com/user-attachments/assets/003b7399-4aea-4e47-b8c6-48c8490a3c2e" />
+ <img width="12752" height="4488" alt="2FigureValGraph" src="https://github.com/user-attachments/assets/d48cc632-0160-4084-88f5-2041834afb95" />
 </p>
 
 
